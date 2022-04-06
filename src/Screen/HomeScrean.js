@@ -2,7 +2,7 @@ import React from 'react'
 
 function HomeScrean() {
   return (
-    <div>HomeScrean</div>
+    <div>HomeScrea n</div>
   )
 }
 
