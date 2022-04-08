@@ -1,0 +1,137 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  &__button {
+    position: relative;
+    display: inline-block;
+    width: 277px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 17px;
+
+    & svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    & svg rect {
+      //stroke: #EC0033;
+      stroke-width: 4;
+      stroke-dasharray: 353, 0;
+      stroke-dashoffset: 0;
+      -webkit-transition: all 600ms ease;
+      transition: all 600ms ease;
+    }
+
+    & span {
+      background: rgb(255, 130, 130);
+      background: -moz-linear-gradient(
+        left,
+        rgba(255, 130, 130, 1) 0%,
+        rgba(225, 120, 237, 1) 100%
+      );
+      background: -webkit-linear-gradient(
+        left,
+        rgba(255, 130, 130, 1) 0%,
+        rgba(225, 120, 237, 1) 100%
+      );
+      background: linear-gradient(
+        to right,
+        rgba(255, 130, 130, 1) 0%,
+        rgba(225, 120, 237, 1) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
+
+      -webkit-text-fill-color: transparent;
+    }
+
+    &:hover svg rect {
+      stroke-width: 4;
+      stroke-dasharray: 196, 543;
+      stroke-dashoffset: 437;
+    }
+  }
+}
+#first-section {
+  .first-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    #first-col {
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .item {
+          display: flex;
+          align-items: center;
+
+          .info {
+            display: flex;
+            flex-direction: column;
+            a {
+              font-size: 0.8rem;
+            }
+          }
+        }
+        img {
+          width: 100px;
+        }
+      }
+    }
+    #seconde-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .image-wrapper {
+        position: relative;
+        img {
+          width: 525px;
+          height: 525px;
+        }
+        .shopping-bag {
+          box-sizing: border-box;
+          padding: 10px;
+          position: absolute;
+          display: inline-block;
+          right: 10px;
+          bottom: 10px;
+          border-radius: 50%;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          transition: 1s all ease-in-out;
+          &:hover {
+            background-color: #fff;
+            svg {
+              transform: rotateY(180deg);
+              fill: #333;
+            }
+          }
+          svg {
+            transition: 1s all ease-in-out;
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+            fill: #333;
+          }
+        }
+      }
+    }
+  }
+}
