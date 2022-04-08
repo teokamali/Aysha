@@ -9,7 +9,6 @@ import "./HomeScreen.scss";
 function HomeScrean() {
   const [show, setShow] = useState(false);
   return (
-<<<<<<< HEAD
     <>
       <Hero background={HeroBackground} overlayColor="rgb(51 51 51 / 80%)">
         <div className="banner">
@@ -90,10 +89,6 @@ function HomeScrean() {
       </section>
     </>
   );
-=======
-    <div>HomeScrea n</div>
-  )
->>>>>>> 2aa70551dce264e571b27869077d823ab3fb5aee
 }
 
 export default HomeScrean;
