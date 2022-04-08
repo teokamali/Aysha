@@ -1,0 +1,14 @@
+.outline-button-wrapper {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  .outline-button {
+    border: 1px solid #333;
+    &:hover {
+      border: 1px solid #333;
+      background-color: #333;
+      color: #fff;
+    }
+  }
+}

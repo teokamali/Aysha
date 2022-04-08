@@ -78,11 +78,17 @@
       .wrapper {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-end;
 
         .item {
           display: flex;
           align-items: center;
+          padding-left: 2rem;
+          margin: 20px;
+          &:hover{
+            cursor: pointer;
+            border: 1px solid #333;
+          }
 
           .info {
             display: flex;
