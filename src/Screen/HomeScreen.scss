@@ -58,6 +58,7 @@
       );
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
 
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
@@ -117,14 +118,14 @@
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
           transition: 1s all ease-in-out;
           &:hover {
-            background-color: #fff;
+          background-color: #fff;
             svg {
               transform: rotateY(180deg);
               fill: #333;
             }
           }
           svg {
-            transition: 1s all ease-in-out;
+          transition: 1s all ease-in-out;
             width: 2rem;
             height: 2rem;
             cursor: pointer;
