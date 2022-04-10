@@ -142,7 +142,7 @@ function HomeScrean() {
             navigation={true}
             slidesPerView={4}
             spaceBetween={30}
-
+            
             modules={[Navigation]}
             className="mySwiper"
           >
