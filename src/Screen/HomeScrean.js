@@ -5,13 +5,16 @@ import image1 from "../assets/image/firstsection.jpeg";
 import ring1 from "../assets/image/ring1.png";
 import ring2 from "../assets/image/ring2.png";
 import ring3 from "../assets/image/ring3.png";
-import "./HomeScreen.scss";
 import DynamicImage from "../components/DynamicImage/DynamicImage";
 import SectionHeading from "../components/SectionHeading/SectionHeading";
 import OutLineButton from "../components/Button/OutLineButton";
 import Gallery from "../components/Gallery/Gallery";
-import CustomSlider from "../components/Slider/CustomSlider";
-import { SwiperSlide } from "swiper/react";
+import "./HomeScreen.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
+
 function HomeScrean() {
   const [show, setShow] = useState(false);
   const gallery = [
@@ -130,22 +133,84 @@ function HomeScrean() {
         <OutLineButton link="/" text="نمایش بیشتر" />
       </section>
       <section id="third-section">
-        <div className="mt-3">
+        <div className="mt-3 ">
           <SectionHeading title="گالری محصولات" />
           <Gallery data={gallery2} />
-          <CustomSlider
-            spaceBetween={50}
+        </div>
+        <div className="container">
+          <Swiper
+            navigation={true}
             slidesPerView={4}
+            spaceBetween={30}
+
+            modules={[Navigation]}
+            className="mySwiper"
           >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-          </CustomSlider>
+            <Swiper
+              navigation={true}
+              modules={[Navigation]}
+              className="mySwiper"
+            >
+
+              <SwiperSlide className="slider-gallery">
+                <a href="/" className="item">
+                  <img
+                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                    alt="img"
+                  />
+                  <p>آیتم اول</p>
+                </a>
+              </SwiperSlide>
+
+              <SwiperSlide className="slider-gallery">
+                <a href="/" className="item">
+                  <img
+                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                    alt="img"
+                  />
+                  <p>آیتم اول</p>
+                </a>
+              </SwiperSlide>
+
+              <SwiperSlide className="slider-gallery">
+                <a href="/" className="item">
+                  <img
+                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                    alt="img"
+                  />
+                  <p>آیتم اول</p>
+                </a>
+              </SwiperSlide>
+
+              <SwiperSlide className="slider-gallery">
+                <a href="/" className="item">
+                  <img
+                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                    alt="img"
+                  />
+                  <p>آیتم اول</p>
+                </a>
+              </SwiperSlide>
+              <SwiperSlide className="slider-gallery">
+                <a href="/" className="item">
+                  <img
+                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                    alt="img"
+                  />
+                  <p>آیتم اول</p>
+                </a>
+              </SwiperSlide>
+              <SwiperSlide className="slider-gallery">
+                <a href="/" className="item">
+                  <img
+                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                    alt="img"
+                  />
+                  <p>آیتم اول</p>
+                </a>
+              </SwiperSlide>
+            </Swiper>
+          </Swiper>
         </div>
       </section>
     </>

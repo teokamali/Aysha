@@ -85,7 +85,7 @@
           align-items: center;
           padding-left: 2rem;
           margin: 20px;
-          &:hover{
+          &:hover {
             cursor: pointer;
             border: 1px solid #333;
           }
@@ -124,20 +124,38 @@
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
           transition: 1s all ease-in-out;
           &:hover {
-          background-color: #fff;
+            background-color: #fff;
             svg {
               transform: rotateY(180deg);
               fill: #333;
             }
           }
           svg {
-          transition: 1s all ease-in-out;
+            transition: 1s all ease-in-out;
             width: 2rem;
             height: 2rem;
             cursor: pointer;
             fill: #333;
           }
         }
+      }
+    }
+  }
+}
+#third-section {
+  .slider-gallery {
+    .item {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 250px;
+      }
+      p {
+        text-align: center;
+        margin-top: 15px;
       }
     }
   }
