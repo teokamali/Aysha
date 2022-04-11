@@ -7,7 +7,7 @@ function DynamicImage({ gallery }) {
     background-image: ${(props) => `url(${props.image})`}; ;
   `;
   return (
-    <div className="dynamic-image">
+    <div className="dynamic-image container">
       <div className="container">
         <SectionHeading
           title="گالری محصولات"

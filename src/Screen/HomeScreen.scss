@@ -110,8 +110,12 @@
       .image-wrapper {
         position: relative;
         img {
-          width: 525px;
-          height: 525px;
+          width: 225px;
+          height: 325px;
+          @media (min-width: 768px) {
+            width: 525px;
+            height: 525px;
+          }
         }
         .shopping-bag {
           box-sizing: border-box;
@@ -132,10 +136,14 @@
           }
           svg {
             transition: 1s all ease-in-out;
-            width: 2rem;
-            height: 2rem;
+            width: 1rem;
+            height: 1rem;
             cursor: pointer;
             fill: #333;
+          @media (min-width: 768px) {
+            width: 2rem;
+            height: 2rem;
+          }
           }
         }
       }

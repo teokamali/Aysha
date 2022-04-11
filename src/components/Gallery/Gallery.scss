@@ -1,19 +1,17 @@
-.gallery {
-  display: flex;
-  justify-content: space-evenly;
-  .item{
-      max-width: 25%;
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      img{
-          object-fit: cover;
-          width: 250px;
-          height: 250px;
-      }
-      p{
-        text-align: center;
-        margin-top: 15px;
-      }
+.item {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  &:hover {
+    color: #333;
+  }
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+  }
+  p {
+    text-align: center;
+    margin-top: 15px;
   }
 }

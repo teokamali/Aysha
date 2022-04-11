@@ -1,0 +1,41 @@
+.cs-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .main-footer {
+    text-align: center;
+    border-bottom: 1px solid #333;
+    width: 95%;
+    margin: 0 auto;
+    @media (min-width: 767px) {
+      text-align: right;
+    }
+    .footer-column-wrapper {
+      padding: 0 2rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      .footer-title {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      .footer-link {
+        text-decoration: none;
+        color: #616161;
+        transition: all 200ms ease-in-out;
+        padding: 5px 0;
+        &:hover {
+          color: #333;
+        }
+      }
+    }
+  }
+  .copy-rights {
+    height: 50px;
+    p {
+      padding-top: 10px;
+      text-align: center;
+    }
+  }
+}

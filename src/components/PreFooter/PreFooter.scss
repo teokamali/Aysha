@@ -1,0 +1,29 @@
+.pre-footer {
+  background-color: #fff4e7;
+
+  min-height: 250px;
+  .pre-footer-column-wrapper {
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: #333;
+    svg {
+      fill: #333;
+      width: 200px;
+      height: 150px;
+      transform: rotateY(180deg);
+      margin: 10px;
+      margin-top: -60px;
+    }
+    .info {
+      label {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

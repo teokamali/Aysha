@@ -11,7 +11,7 @@ const Hero = ({ children, background, overlayColor, className }) => {
     background-size: cover;
     background-position: 50% 50%;
     @media (max-width: 767px) {
-      height: 150vh;
+      height: 100vh;
     }
   `;
   const HeroSectionOverlay = styled.div`

@@ -9,11 +9,14 @@ import DynamicImage from "../components/DynamicImage/DynamicImage";
 import SectionHeading from "../components/SectionHeading/SectionHeading";
 import OutLineButton from "../components/Button/OutLineButton";
 import Gallery from "../components/Gallery/Gallery";
+import PreFooter from "../components/PreFooter/PreFooter";
+
 import "./HomeScreen.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
+import Newsletter from "../components/NewsLetter/Newsletter";
 
 function HomeScrean() {
   const [show, setShow] = useState(false);
@@ -82,137 +85,154 @@ function HomeScrean() {
           </a>
         </div>
       </Hero>
-      <section id="first-section" className="mt-3">
-        <SectionHeading
-          title="جدیدترین ها"
-          desc="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از "
-        />
-        <div className="first-section flex-column-reverse flex-md-row m-0">
-          {show && (
-            <div id="first-col" className=" col-md-6 ">
-              <div className="wrapper">
-                <div className="item">
-                  <img src={ring1} alt="" />
-                  <div className="info">
-                    <span>حلقه عروسی طلایی جدید</span>
-                    <OutLineButton link="/" text="خریدد محصول" />
+      <div className="container">
+        <section id="first-section" className="mt-3">
+          <SectionHeading
+            title="جدیدترین ها"
+            desc="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از "
+          />
+          <div className="first-section flex-column-reverse flex-md-row m-0">
+            {show && (
+              <div id="first-col" className=" col-md-6 ">
+                <div className="wrapper">
+                  <div className="item">
+                    <img src={ring1} alt="" />
+                    <div className="info">
+                      <span>حلقه عروسی طلایی جدید</span>
+                      <OutLineButton link="/" text="خریدد محصول" />
+                    </div>
                   </div>
-                </div>
-                <div className="item">
-                  <img src={ring2} alt="" />
-                  <div className="info">
-                    <span>حلقه عروسی طلایی جدید</span>
-                    <OutLineButton link="/" text="خریدد محصول" />
+                  <div className="item">
+                    <img src={ring2} alt="" />
+                    <div className="info">
+                      <span>حلقه عروسی طلایی جدید</span>
+                      <OutLineButton link="/" text="خریدد محصول" />
+                    </div>
                   </div>
-                </div>
-                <div className="item">
-                  <img src={ring3} alt="" />
-                  <div className="info">
-                    <span>حلقه عروسی طلایی جدید</span>
-                    <OutLineButton link="/" text="خریدد محصول" />
+                  <div className="item">
+                    <img src={ring3} alt="" />
+                    <div className="info">
+                      <span>حلقه عروسی طلایی جدید</span>
+                      <OutLineButton link="/" text="خریدد محصول" />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )}
-          <div id="seconde-col" className=" col-md-6 container ">
-            <div className="image-wrapper">
-              <img src={image1} alt="most popular item" />
-              <div className="shopping-bag" onClick={() => setShow(!show)}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <path d="M416 160h-72V120C344 53.83 290.2 0 224 0S104 53.83 104 120V160H32C14.33 160 0 174.3 0 192v240C0 476.2 35.82 512 80 512h288c44.18 0 80-35.82 80-80V192C448 174.3 433.7 160 416 160zM152 120C152 80.3 184.3 48 224 48s72 32.3 72 72V160h-144V120zM400 432c0 17.64-14.36 32-32 32h-288c-17.64 0-32-14.36-32-32v-224h56v56C104 277.3 114.8 288 128 288s24-10.75 24-24V208h144v56C296 277.3 306.8 288 320 288s24-10.75 24-24V208h56V432z" />
-                </svg>
+            )}
+            <div id="seconde-col" className=" col-md-6 container ">
+              <div className="image-wrapper">
+                <img src={image1} alt="most popular item" />
+                <div className="shopping-bag" onClick={() => setShow(!show)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M416 160h-72V120C344 53.83 290.2 0 224 0S104 53.83 104 120V160H32C14.33 160 0 174.3 0 192v240C0 476.2 35.82 512 80 512h288c44.18 0 80-35.82 80-80V192C448 174.3 433.7 160 416 160zM152 120C152 80.3 184.3 48 224 48s72 32.3 72 72V160h-144V120zM400 432c0 17.64-14.36 32-32 32h-288c-17.64 0-32-14.36-32-32v-224h56v56C104 277.3 114.8 288 128 288s24-10.75 24-24V208h144v56C296 277.3 306.8 288 320 288s24-10.75 24-24V208h56V432z" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <OutLineButton link="/" text="نمایش بیشتر" />
-      </section>
-      <section id="seconde-section">
-        <DynamicImage gallery={gallery} />
-        <OutLineButton link="/" text="نمایش بیشتر" />
-      </section>
-      <section id="third-section">
-        <div className="mt-3 ">
-          <SectionHeading title="گالری محصولات" />
-          <Gallery data={gallery2} />
-        </div>
-        <div className="container">
-          <Swiper
-            navigation={true}
-            slidesPerView={4}
-            spaceBetween={30}
-            
-            modules={[Navigation]}
-            className="mySwiper"
-          >
+          <OutLineButton link="/" text="نمایش بیشتر" />
+        </section>
+        <section id="seconde-section">
+          <DynamicImage gallery={gallery} />
+          <OutLineButton link="/" text="نمایش بیشتر" />
+        </section>
+        <section id="third-section">
+          <div className="mt-3">
+            <SectionHeading title="گالری محصولات" />
+            <Gallery data={gallery2} />
+          </div>
+          <div className="container">
             <Swiper
               navigation={true}
-              modules={[Navigation]}
-              className="mySwiper"
+              slidesPerView={4}
+              breakpoints={{
+                "@0.00": {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                "@0.75": {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                "@1.00": {
+                  slidesPerView: 3,
+                  spaceBetween: 40,
+                },
+                "@1.50": {
+                  slidesPerView: 4,
+                  spaceBetween: 50,
+                },
+              }}
             >
+              <Swiper
+                navigation={true}
+                modules={[Navigation]}
+                className="mySwiper"
+              >
+                <SwiperSlide className="slider-gallery">
+                  <a href="/" className="item">
+                    <img
+                      src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                      alt="img"
+                    />
+                    <p>آیتم اول</p>
+                  </a>
+                </SwiperSlide>
 
-              <SwiperSlide className="slider-gallery">
-                <a href="/" className="item">
-                  <img
-                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
-                    alt="img"
-                  />
-                  <p>آیتم اول</p>
-                </a>
-              </SwiperSlide>
+                <SwiperSlide className="slider-gallery">
+                  <a href="/" className="item">
+                    <img
+                      src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                      alt="img"
+                    />
+                    <p>آیتم اول</p>
+                  </a>
+                </SwiperSlide>
 
-              <SwiperSlide className="slider-gallery">
-                <a href="/" className="item">
-                  <img
-                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
-                    alt="img"
-                  />
-                  <p>آیتم اول</p>
-                </a>
-              </SwiperSlide>
+                <SwiperSlide className="slider-gallery">
+                  <a href="/" className="item">
+                    <img
+                      src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                      alt="img"
+                    />
+                    <p>آیتم اول</p>
+                  </a>
+                </SwiperSlide>
 
-              <SwiperSlide className="slider-gallery">
-                <a href="/" className="item">
-                  <img
-                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
-                    alt="img"
-                  />
-                  <p>آیتم اول</p>
-                </a>
-              </SwiperSlide>
-
-              <SwiperSlide className="slider-gallery">
-                <a href="/" className="item">
-                  <img
-                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
-                    alt="img"
-                  />
-                  <p>آیتم اول</p>
-                </a>
-              </SwiperSlide>
-              <SwiperSlide className="slider-gallery">
-                <a href="/" className="item">
-                  <img
-                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
-                    alt="img"
-                  />
-                  <p>آیتم اول</p>
-                </a>
-              </SwiperSlide>
-              <SwiperSlide className="slider-gallery">
-                <a href="/" className="item">
-                  <img
-                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
-                    alt="img"
-                  />
-                  <p>آیتم اول</p>
-                </a>
-              </SwiperSlide>
+                <SwiperSlide className="slider-gallery">
+                  <a href="/" className="item">
+                    <img
+                      src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                      alt="img"
+                    />
+                    <p>آیتم اول</p>
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className="slider-gallery">
+                  <a href="/" className="item">
+                    <img
+                      src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                      alt="img"
+                    />
+                    <p>آیتم اول</p>
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className="slider-gallery">
+                  <a href="/" className="item">
+                    <img
+                      src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                      alt="img"
+                    />
+                    <p>آیتم اول</p>
+                  </a>
+                </SwiperSlide>
+              </Swiper>
             </Swiper>
-          </Swiper>
-        </div>
-      </section>
+          </div>
+        </section>
+      </div>
+        <PreFooter />
+        <Newsletter />
     </>
   );
 }
