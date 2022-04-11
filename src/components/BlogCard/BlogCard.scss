@@ -1,0 +1,23 @@
+.blog-card {
+  .card{
+    min-height: 350px;
+    img{
+      height: 200px;
+    }
+  }
+  .blog-card-date {
+    color: #a2a2a2;
+    font-size: 0.8rem;
+    text-align: right;
+  }
+  .blog-title {
+    color: #333;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 200ms ease-in-out;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -5,21 +5,23 @@ import React from "react";
 // context
 import ThemeContextProvider from "./context/ThemeContextProvider";
 import ProductsContextProvider from "./context/ProductsContextProvider";
+import BlogContextProvider from "./context/BlogContextProvider";
 
 // routes
 import WebsiteRoutes from "./Routes/WebsiteRoutes";
 import PanelRoutes from "./Routes/PanelRoutes";
 import { Route, Routes } from "react-router-dom";
-
 function App() {
   return (
     <ThemeContextProvider>
-      <ProductsContextProvider>
-        <Routes>
-          <Route path="/*" element={<WebsiteRoutes />} />
-          <Route path="/administrator/*" element={<PanelRoutes />} />
-        </Routes>
-      </ProductsContextProvider>
+      <BlogContextProvider>
+        <ProductsContextProvider>
+          <Routes>
+            <Route path="/*" element={<WebsiteRoutes />} />
+            <Route path="/administrator/*" element={<PanelRoutes />} />
+          </Routes>
+        </ProductsContextProvider>
+      </BlogContextProvider>
     </ThemeContextProvider>
   );
 }
