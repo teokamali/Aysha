@@ -5,8 +5,27 @@
 }
 .main-wrapper {
   margin-top: 2rem;
-  article {
-  }
-  aside {
+}
+.category-list {
+  list-style-type: none;
+  .category-item {
+    margin: 1rem 0;
+    .category-link {
+      text-decoration: none;
+      color: #333;
+      display: flex;
+      justify-content: space-between;
+      .category-title {
+        font-size: 1.2rem;
+        transition: all 200ms ease-in-out;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .category-relative-post {
+        background-color: orange;
+        padding: 10px 20px;
+      }
+    }
   }
 }

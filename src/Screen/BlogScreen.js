@@ -4,6 +4,7 @@ import Ring2 from "../assets/image/ring2.png";
 import { BlogContext } from "../context/BlogContextProvider";
 import "./BlogScreen.scss";
 import BlogCard from "../components/BlogCard/BlogCard";
+import { Link } from "react-router-dom";
 function BlogScreen() {
   const { blogs } = useContext(BlogContext);
   console.log(blogs);
@@ -22,9 +23,14 @@ function BlogScreen() {
       title: "لورم ایپسوم متن ساختگی با تولید سادگی",
       desc: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و ",
       publishDate: "23 اردیبهشت",
-      category: "طلا و جواهرات",
+      category: "2طلا و جواهرات",
       _id: "/",
     },
+  ];
+  const categories = [
+    { name: "طلا", id: 1, reletivePosts: 120, url: "/" },
+    { name: "نقره", id: 2, reletivePosts: 420, url: "/" },
+    { name: "بدلیجات", id: 3, reletivePosts: 50, url: "/" },
   ];
   return (
     <main id="BlogPage" className="Blog">
@@ -50,7 +56,7 @@ function BlogScreen() {
             <div className="row">
               <article className="col-12 col-lg-8">
                 <BlogCard data={data[0]} type="featured" />
-                <div className="row">
+                <div className="row mt-3">
                   {blogs.slice(0, 6).map((b, i) => (
                     <div className="col-12 col-lg-6" key={i}>
                       <BlogCard type="column" data={b} />
@@ -71,6 +77,42 @@ function BlogScreen() {
                 <div className="py-3">
                   <BlogCard data={data[1]} type="featured" />
                 </div>
+              </aside>
+            </div>
+            <div className="mt-4">
+              <h3 className="text-center py-3 text-bold">پست های پیشنهادی</h3>
+              <div className="row">
+                {blogs.slice(0, 3).map((b, i) => (
+                  <div key={i} className="col-12 col-lg-4">
+                    <BlogCard type="column" data={b} />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-4 row">
+              <article className="col-12 col-lg-8">
+                <div className="row">
+                  {data.map((b, i) => (
+                    <div className="col-12 col-lg-6" key={i}>
+                      <BlogCard type="row" data={b} />
+                    </div>
+                  ))}
+                </div>
+              </article>
+              <aside className="col-12 col-lg-4">
+                <h3>دسته بندی ها</h3>
+                <ul className="col-12 category-list">
+                  {categories.map((b) => (
+                    <li className="category-item" key={b.id}>
+                      <Link to={b.url} className="category-link">
+                        <span className="category-title">{b.name}</span>
+                        <span className="badge category-relative-post">
+                          {b.reletivePosts}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </aside>
             </div>
           </div>

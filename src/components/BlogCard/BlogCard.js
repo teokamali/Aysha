@@ -46,11 +46,11 @@ function BlogCard({ data, type }) {
             </div>
             <div className="col-md-8">
               <div className="card-body">
-                <div className="d-flex justify-content-evenly align-items-center w-50 mb-3">
+                <div className="d-flex justify-content-evenly align-items-center  mb-3">
                   <span className="badge cs-badge me-2">{data.category}</span>
                   <p className="card-text blog-date">{data.publishDate}</p>
                 </div>
-                <Link to={data._id}>{data.title}</Link>
+                <Link to={data._id} className="blog-title">{data.title}</Link>
                 <p className="card-text">{data.desc}</p>
               </div>
             </div>
@@ -69,7 +69,7 @@ function BlogCard({ data, type }) {
             </div>
             <div className="col-md-8">
               <div className="card-body">
-                <Link  to={data._id}>{data.title}</Link>
+                <Link to={data._id}>{data.title}</Link>
               </div>
             </div>
           </div>
