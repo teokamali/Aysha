@@ -1,12 +1,13 @@
 import React, { Suspense } from "react";
-import { Navigate, Outlet, Route, Routes } from "react-router-dom";
-import AdminPanel from "../Screen/AdminPanel";
-import routes from "../AdminPanel/routes";
+import { Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import UserContextProvider from "../AdminPanel/context/UserContextProvider";
 import ProductsContextProvider from "../AdminPanel/context/ProductsContextProvider";
 import BlogContextProvider from "../AdminPanel/context/BlogContextProvider";
 import store from "../AdminPanel/store";
+import ProtectedRoute from "../AdminPanel/components/ProtectedRoute";
+import routes from "../AdminPanel/routes";
+import Dashboard from "../AdminPanel/views/dashboard/Dashboard";
 export default function PanelRoutes() {
   // Containers
   const DefaultLayout = React.lazy(() =>
@@ -14,12 +15,7 @@ export default function PanelRoutes() {
   );
 
   // Pages
-  const Login = React.lazy(() =>
-    import("../AdminPanel/views/pages/login/Login")
-  );
-  const Register = React.lazy(() =>
-    import("../AdminPanel/views/pages/register/Register")
-  );
+
   const Page404 = React.lazy(() =>
     import("../AdminPanel/views/pages/page404/Page404")
   );
@@ -32,6 +28,8 @@ export default function PanelRoutes() {
       <div className="sk-spinner sk-spinner-pulse"></div>
     </div>
   );
+  console.log(typeof ProtectedRoute);
+  console.log(typeof Route);
 
   return (
     <Suspense fallback={loading}>
@@ -40,13 +38,7 @@ export default function PanelRoutes() {
           <ProductsContextProvider>
             <BlogContextProvider>
               <Routes>
-                <Route path="/" element={<Navigate to="dashboard" />} />
-                <Route path="login" name="Login Page" element={<Login />} />
-                <Route
-                  path="register"
-                  name="Register Page"
-                  element={<Register />}
-                />
+                <Route path="/" element={<DefaultLayout />} />
                 <Route path="404" name="Page 404" element={<Page404 />} />
                 <Route path="500" name="Page 500" element={<Page500 />} />
                 <Route path="/*" name="dashboard" element={<DefaultLayout />}>

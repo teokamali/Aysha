@@ -10,7 +10,6 @@ import "./styles/global.css";
 import "./styles/light.css";
 import "./styles/dark.css";
 import "./AdminPanel/scss/style.scss";
-
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 
