@@ -1,0 +1,55 @@
+@import "../../styles/colors.scss";
+
+.mini-navbar {
+  //   opacity: 0;
+  height: 65px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  width: 100%;
+  background-color: #fff;
+  .mini-nav-content {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .mini-navbar-logo {
+      width: 100px;
+      height: 50px;
+    }
+    .menus-container .menu .sub-menu-container {
+      width: 100vw;
+      left: calc(100% - 66vw);
+      top: 49px;
+    }
+    .right-menu-container {
+      display: flex;
+      a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #333;
+        font-family: iranSans;
+        font-size: 0.75rem;
+        font-weight: 100;
+        display: flex;
+        margin: 0 8px;
+        text-decoration: none;
+        &:hover {
+          color: unset;
+          border-bottom: 1px solid $main-color;
+          color: $main-color;
+        }
+        i {
+          margin: 0 4px;
+          font-size: 1rem;
+        }
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
