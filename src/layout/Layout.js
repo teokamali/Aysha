@@ -10,7 +10,6 @@ function Layout({ children }) {
   const [isMiniNavbar, setIsMiniNavbar] = useState(false);
   const listenScrollEvent = () => {
     window.scrollY > 0 ? setIsMiniNavbar(true) : setIsMiniNavbar(false);
-    console.log(window.scrollY);
   };
   useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent);

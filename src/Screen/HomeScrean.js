@@ -15,9 +15,13 @@ import "./HomeScreen.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper";
+import "swiper/css/pagination";
+
+import { Pagination, Navigation } from "swiper";
+
 import Newsletter from "../components/NewsLetter/Newsletter";
 import classnames from "classnames";
+
 const gallery = [
   "https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80",
   "https://images.unsplash.com/photo-1492760864391-753aaae87234?auto=format&fit=crop&w=1336&q=80",
@@ -50,6 +54,35 @@ const gallery2 = [
   },
   {
     id: 4,
+    name: "آیتم چهارم",
+    image:
+      "https://images.unsplash.com/photo-1510425463958-dcced28da480?auto=format&fit=crop&w=1352&q=80",
+    link: "/",
+  },
+  {
+    id: 5,
+    name: "آیتم اول",
+    image:
+      "https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80",
+    link: "/",
+  },
+  {
+    id: 6,
+    name: "آیتم دوم",
+    image:
+      "https://images.unsplash.com/photo-1492760864391-753aaae87234?auto=format&fit=crop&w=1336&q=80",
+    link: "/",
+  },
+  {
+    id: 7,
+    name: "آیتم سوم",
+    image:
+      "https://images.unsplash.com/photo-1503631285924-e1544dce8b28?auto=format&fit=crop&w=1234&q=80",
+
+    link: "/",
+  },
+  {
+    id: 8,
     name: "آیتم چهارم",
     image:
       "https://images.unsplash.com/photo-1510425463958-dcced28da480?auto=format&fit=crop&w=1352&q=80",
@@ -202,13 +235,26 @@ function HomeScrean() {
         </section>
         <section id="third-section">
           <div className="mt-3">
-            <SectionHeading title="گالری محصولات" />
+            <SectionHeading
+              title="دسته بندی محصولات"
+              desc="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+ چاپ و با استفاده از طراحان گرافیک است."
+            />
             <Gallery data={gallery2} />
           </div>
           <div className="container">
+            <SectionHeading
+              title="کلکسیون"
+              desc="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+ چاپ و با استفاده از طراحان گرافیک است."
+            />
             <Swiper
               navigation={true}
-              slidesPerView={4}
+              slidesPerView={3}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination, Navigation]}
               breakpoints={{
                 "@0.00": {
                   slidesPerView: 1,
@@ -223,80 +269,68 @@ function HomeScrean() {
                   spaceBetween: 40,
                 },
                 "@1.50": {
-                  slidesPerView: 4,
+                  slidesPerView: 3,
                   spaceBetween: 50,
                 },
               }}
             >
-              <Swiper
-                navigation={true}
-                modules={[Navigation]}
-                className="mySwiper"
-              >
-                <SwiperSlide className="slider-gallery">
-                  <a href="/" className="item">
-                    <img
-                      src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
-                      alt="img"
-                    />
-                    <p>آیتم اول</p>
-                  </a>
-                </SwiperSlide>
+              <SwiperSlide className="slider-gallery">
+                <a href="/" className="item">
+                  <img
+                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                    alt="img"
+                  />
+                </a>
+              </SwiperSlide>
 
-                <SwiperSlide className="slider-gallery">
-                  <a href="/" className="item">
-                    <img
-                      src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
-                      alt="img"
-                    />
-                    <p>آیتم اول</p>
-                  </a>
-                </SwiperSlide>
+              <SwiperSlide className="slider-gallery">
+                <a href="/" className="item">
+                  <img
+                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                    alt="img"
+                  />
+                </a>
+              </SwiperSlide>
 
-                <SwiperSlide className="slider-gallery">
-                  <a href="/" className="item">
-                    <img
-                      src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
-                      alt="img"
-                    />
-                    <p>آیتم اول</p>
-                  </a>
-                </SwiperSlide>
+              <SwiperSlide className="slider-gallery">
+                <a href="/" className="item">
+                  <img
+                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                    alt="img"
+                  />
+                </a>
+              </SwiperSlide>
 
-                <SwiperSlide className="slider-gallery">
-                  <a href="/" className="item">
-                    <img
-                      src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
-                      alt="img"
-                    />
-                    <p>آیتم اول</p>
-                  </a>
-                </SwiperSlide>
-                <SwiperSlide className="slider-gallery">
-                  <a href="/" className="item">
-                    <img
-                      src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
-                      alt="img"
-                    />
-                    <p>آیتم اول</p>
-                  </a>
-                </SwiperSlide>
-                <SwiperSlide className="slider-gallery">
-                  <a href="/" className="item">
-                    <img
-                      src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
-                      alt="img"
-                    />
-                    <p>آیتم اول</p>
-                  </a>
-                </SwiperSlide>
-              </Swiper>
+              <SwiperSlide className="slider-gallery">
+                <a href="/" className="item">
+                  <img
+                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                    alt="img"
+                  />
+                </a>
+              </SwiperSlide>
+              <SwiperSlide className="slider-gallery">
+                <a href="/" className="item">
+                  <img
+                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                    alt="img"
+                  />
+                </a>
+              </SwiperSlide>
+              <SwiperSlide className="slider-gallery">
+                <a href="/" className="item">
+                  <img
+                    src="https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80"
+                    alt="img"
+                  />
+                </a>
+              </SwiperSlide>
             </Swiper>
           </div>
         </section>
       </div>
-      <PreFooter />
-      <Newsletter />
+      {/* <PreFooter />
+      <Newsletter /> */}
     </>
   );
 }
