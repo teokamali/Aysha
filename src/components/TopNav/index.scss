@@ -1,38 +1,42 @@
 @import "../../styles/colors.scss";
 .top-nav-container {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  margin: 0.6rem 0;
-  height: 24px;
-  .left-menu-container {
-    display: flex;
-  }
-  .right-menu-container {
-    display: flex;
-  }
-  a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #333;
-    font-family: iranSans;
-    font-size: 0.75rem;
-    font-weight: 100;
-    display: flex;
-    margin: 0 8px;
-    text-decoration: none;
-    &:hover {
-      color: unset;
-      border-bottom: 1px solid $main-color;
-      color: $main-color;
-    }
-    i {
-      margin: 0 4px;
-      font-size: 1rem;
-    }
-    p{
-      margin: 0;
-    }
-  }
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	color: $black;
+	background-color: $main-color;
+	.left-menu-container {
+		display: flex;
+		font-weight: 400;
+		margin-left: 50px;
+	}
+	.right-menu-container {
+		display: flex;
+		font-weight: 400;
+		margin-right: 50px;
+	}
+	a {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: #333;
+		font-family: iranSans;
+		font-size: 0.75rem;
+		display: flex;
+		margin: 0 8px;
+		text-decoration: none;
+
+		i {
+			margin: 0 4px;
+			font-size: 1rem;
+			font-weight: 500;
+		}
+		p {
+			margin: 0;
+		}
+	}
 }
